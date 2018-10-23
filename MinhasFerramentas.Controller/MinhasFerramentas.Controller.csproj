@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MinhasFerramentas.BancoDados\MinhasFerramentas.BancoDados.csproj" />
+    <ProjectReference Include="..\MinhasFerramentas.Model\MinhasFerramentas.Model.csproj" />
+  </ItemGroup>
+
+</Project>

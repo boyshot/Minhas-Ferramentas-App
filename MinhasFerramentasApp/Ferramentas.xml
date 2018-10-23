@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Ferramentas>
+    <Ferramenta codigo="1" descricao="Alicate" quantidade="5" preco="30,00"/>
+    <Ferramenta codigo="2" descricao="Martelo" quantidade="3" preco="20,00"/>
+    <Ferramenta codigo="3" descricao="Chave"   quantidade="2" preco="25,00"/>
+</Ferramentas>
