@@ -1,0 +1,63 @@
+﻿
+@model IEnumerable<MinhasFerramentasApp.Model.Ferramenta>
+@{
+    ViewData["Title"] = "Ferramentas";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ferramenta</title>
+</head>
+<body>
+    <br />
+    <p>
+        <a asp-action="Create">Nova Ferramenta</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Código
+                </th>
+                <th>
+                    Descrição
+                </th>
+                <th>
+                    Quantidade
+                </th>
+                <th>
+                    Preço
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Codigo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descricao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantidade)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Preco)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Visualizar", "Details", new { id = item.Codigo }) |
+                        @Html.ActionLink("Editar",     "Edit", new { id = item.Codigo }) |
+                        @Html.ActionLink("Apagar",     "Delete"  , new { id = item.Codigo })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

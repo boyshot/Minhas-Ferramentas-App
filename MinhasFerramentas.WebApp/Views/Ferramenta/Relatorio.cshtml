@@ -1,0 +1,66 @@
+﻿@model IEnumerable<MinhasFerramentasApp.Model.Ferramenta>
+
+@{
+    ViewData["Title"] = "Relatorio";
+    var total = Decimal.Zero;
+    var subTotal = Decimal.Zero;
+}
+<br />
+<br />
+<p>Relatório do Cadastro de Ferramentas</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Código
+            </th>
+            <th>
+                Descrição
+            </th>
+            <th>
+                Quantidade
+            </th>
+            <th>
+                Preço
+            </th>
+            <th>
+                Total
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            subTotal = item.Quantidade * item.Preco;
+            total += subTotal;
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Codigo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Preco)
+                </td>
+                <td>
+                    @String.Format("{0:N2}", subTotal)
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<p>Valor Total das Ferrametas: R$ [@String.Format("{0:N2}", total)]</p>
+<br />
+<br />
+<br />
+<div>
+    <a asp-action="Index">Retorna para a Lista de Ferramentas</a>
+</div>
