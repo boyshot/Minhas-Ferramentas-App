@@ -16,6 +16,21 @@
     <p>
         <a asp-action="Create">Nova Ferramenta</a>
     </p>
+
+    <form>
+        <p>
+            <select name="tipo">
+                <option value=""></option>
+                <option value="descricao">Descrição</option>
+                <option value="codigo">Código</option>
+            </select>
+
+            Descrição: <input type="text" name="pesquisa">
+            <input type="submit" value="Filtrar" />
+        </p>
+    </form>
+
+
     <table class="table">
         <thead>
             <tr>
@@ -52,8 +67,8 @@
                     </td>
                     <td>
                         @Html.ActionLink("Visualizar", "Details", new { id = item.Codigo }) |
-                        @Html.ActionLink("Editar",     "Edit", new { id = item.Codigo }) |
-                        @Html.ActionLink("Apagar",     "Delete"  , new { id = item.Codigo })
+                        @Html.ActionLink("Editar", "Edit", new { id = item.Codigo }) |
+                        @Html.ActionLink("Apagar", "Delete", new { id = item.Codigo })
                     </td>
                 </tr>
             }

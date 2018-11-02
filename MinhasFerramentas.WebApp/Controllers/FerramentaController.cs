@@ -20,9 +20,27 @@ namespace MinhasFerramentas.WebApp.Controllers
     }
 
     // GET: /<controller>/
-    public IActionResult Index()
+    public IActionResult Index(string tipo, string pesquisa)
     {
-      var itens = ferramentaController.GetTodosRegistros();
+      List<Ferramenta> itens = null;
+
+      if (!string.IsNullOrWhiteSpace(tipo) && !string.IsNullOrWhiteSpace(pesquisa))
+      {
+        try
+        {
+          if ("codigo".Equals(tipo) && int.Parse(pesquisa) > 0)
+            itens = ferramentaController.GetTodosRegistros(int.Parse(pesquisa));
+          else if ("descricao".Equals(tipo))
+            itens = ferramentaController.GetTodosRegistros(pesquisa);
+        }
+        catch
+        {
+          itens = ferramentaController.GetTodosRegistros();
+        }
+      }
+      else
+        itens = ferramentaController.GetTodosRegistros();
+
       return View(itens);
     }
 
