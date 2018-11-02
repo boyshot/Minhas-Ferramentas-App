@@ -11,3 +11,5 @@ O aplicativo é um cadastro de Ferramentas onde e possível indicar os dados da 
 Foram criados os testes unitários e também o Castle.Windsor no projeto.
 
 Desenvolvedor: Paulo André da Rocha
+
+publicação: https://minhasferramentaswebapp20181102082118.azurewebsites.net/
